@@ -3,20 +3,16 @@ kind: Deployment
 metadata:
   name: turtle-deployment
   namespace: default
-  labels:
-    app: nginx
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx
+      app: turtle
   template:
     metadata:
       labels:
-        app: nginx
+        app: turtle
     spec:
       containers:
       - name: nginx
         image: nginx:1.14.2
-        ports:
-        - containerPort: 80
